@@ -1,23 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from 'react';
+import Button from "@mui/material/Button"
 
-function App() {
+const fruitList =[
+  {
+    name : 'Mango'
+  },
+]
+
+const App = () => {
+  const [list, setList] = React.useState(fruitList)
+  const [name, setName] = React.useState('')
+
+  function handleChange(event){
+    setName(event.target.value)
+  }
+
+  function handleAdd(){
+    const newList = list.concat({name})
+    setList(newList)
+    
+    setName('')
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Simple List in React</h1>
+      <h2>Adding a dynamically generated list item</h2>
+
+      {
+        list.map( (item, index) =>
+          <p>{item.name+(index+1)}</p>
+        )
+      }
+
+      <div>
+        <label>
+          Fruit Name
+        </label>
+        
+        <input type="text" value={name} onChange={handleChange} />
+
+        <Button type="button" onClick={handleAdd} variant="contained">
+          Add Fruit
+        </Button>
+      </div>
     </div>
   );
 }

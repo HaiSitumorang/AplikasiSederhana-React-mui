@@ -1,7 +1,3 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,6 +22,42 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.App h1{
+  text-align: center;
+}
+
+.App h2{
+  text-align: center;
+}
+
+.App p{
+  background-color: #d9ecf8;
+  padding: 6px 10px;
+  margin :1px 100px;
+  border: 0.5px skyblue;
+  text-align: center;
+  box-sizing: border-box;
+  display: block;
+  color: #86a3b6;
+}
+
+.App label{
+  text-align: left;
+  margin-left: 100px;
+  display: block;
+}
+
+.App input{
+   margin-left: 100px;
+   margin-right: 10px;
+}
+
+.App Button{
+  font-size: small;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 0.1%;
 }
 
 @keyframes App-logo-spin {
